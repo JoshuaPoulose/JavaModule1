@@ -1,47 +1,59 @@
 package functionalInterfaces;
-import java.util.function.Function;
+
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 
 public class FunctionTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		List<String> strings= Arrays.asList("tamilnadu","kerala","karnataka","andrapradesh");
-		
-		
-		Function<String,Integer> f=(str)->{
+		Function<String, Integer> f = (str) -> {
 			return str.length();
 		};
-		printLength(strings,f);
-		
-		Function <String,String> s=(str1)->{
-			return str1.toUpperCase();
-			};
-			uppercase(strings,s);
-			
-		Function<String,String> J=(str2)->{
-			return str2.toLowerCase();
+		List<String> strings = Arrays.asList("Andra Pradesh", "Tamil Nadu", "kerala", "Karnataka", "Telangana");
+		String str1 = "mandan";
+
+		Function<String, String> f1 = (str) -> { // uppercase FUnction
+			return str.toUpperCase();
 		};
-			lowercase(strings,J);
-			
+		Function<String, String> f2 = (str) -> {
+			return str.toLowerCase();
+
+		};
+		Function<String, String> f3 = (str) -> {
+			StringBuilder s = new StringBuilder(str);
+			s.reverse();
+			String rev = s.toString();
+			return rev;
+
+		};
+
+		upper(strings, f1);
+		lower(strings, f2);
+		reverse(str1, f3);
+
+		// TODO Auto-generated method stub
+
 	}
-		private static void printLength(List<String> strings,Function<String, Integer> f) {
-		for(String str: strings) {
+
+	public static void print(List<String> strings, Function<String, Integer> f) {
+		for (String str : strings) {
 			System.out.println(f.apply(str));
-			}
 		}
-		public static void uppercase(List<String> strings,Function<String,String> up) {
-			for(String str1: strings){
-				System.out.println(up.apply(str1));
-				}
-		}
-		public static void lowercase(List<String> strings,Function<String,String> low) {
-			for(String str2: strings){
-				System.out.println(low.apply(str2));
-				}
-		}
+	}
 
-	
+	public static void upper(List<String> strings, Function<String, String> f1) {
+		for (String str : strings)
+			System.out.println(f1.apply(str));
+	}
 
+	public static void lower(List<String> strings, Function<String, String> f2) {
+		for (String str : strings)
+			System.out.println(f2.apply(str));
+	}
+
+	public static void reverse(String str, Function<String, String> f3) {
+		System.out.println(f3.apply(str));
+
+	}
 }
