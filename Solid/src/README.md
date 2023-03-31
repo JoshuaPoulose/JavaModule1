@@ -1,0 +1,1 @@
+Added DI,ISP,LSP,SRP,OCP
