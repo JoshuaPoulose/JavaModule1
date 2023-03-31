@@ -1,5 +1,5 @@
-package maths;
 
+package maths;
 public class Math1 {
 
 	public static void main(String[] args) {
@@ -11,7 +11,6 @@ public class Math1 {
 		abc.div();
 		abc.mul();
 		abc.fact();
-
 	}
 
 }

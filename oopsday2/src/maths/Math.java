@@ -51,7 +51,7 @@ public class Math implements mathIface {
 
 	@Override
 	public void add() {
-		// TODO Auto-generated method stub
+		
 		System.out.println("a + b ="+(a+b));
 
 	}
